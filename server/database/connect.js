@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 require('dotenv/config');
 
+/**
+ * Function to connect database
+ */
 module.exports = async function connection() {
 
     try {

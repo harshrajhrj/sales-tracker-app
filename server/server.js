@@ -55,13 +55,7 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/', require('./authentication/AuthRoutes'));
+app.use('/', require('./routes/SendSalesOnMail'));
 
-app.get('/', (req, res) => {
-    console.log(req.user);
-    res.send('Landed');
-    // res.render('ZoomRecorder.ejs', { user, type: 'landing' });
-})
-
-app.use('/', require('./authentication/GAuth'));
-
-app.listen(3000, () => console.log('Server started on port 3000!'));
+app.listen(8080, () => console.log('Server started on port 8080!'));
